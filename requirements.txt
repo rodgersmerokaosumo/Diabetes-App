@@ -6,5 +6,4 @@ scikit-learn
 gunicorn
 Python-IO
 pybase64
-json
 numpy
