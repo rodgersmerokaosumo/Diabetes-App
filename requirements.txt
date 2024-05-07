@@ -4,7 +4,7 @@ pandas
 plotly
 scikit-learn
 gunicorn
-io
+Python-IO
 base64
 json
 numpy
