@@ -1,5 +1,5 @@
 import ast
-import pkg_resources
+import importlib.metadata as metadata
 
 def extract_imports(path):
     with open(path, "r") as file:
@@ -17,7 +17,7 @@ def extract_imports(path):
     return imports
 
 def get_installed_packages():
-    installed_packages = {dist.project_name for dist in pkg_resources.working_set}
+    installed_packages = {dist.metadata['Name'] for dist in metadata.distributions()}
     return installed_packages
 
 def main(script_path):
@@ -25,7 +25,7 @@ def main(script_path):
     installed_packages = get_installed_packages()
     requirements = imports.intersection(installed_packages)
 
-    with open("requirements.txt", "w") as file:
+    with open("requirement.txt", "w") as file:
         for package in requirements:
             file.write(package + "\n")
 
