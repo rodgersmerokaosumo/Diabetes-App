@@ -5,6 +5,6 @@ plotly
 scikit-learn
 gunicorn
 Python-IO
-base64
+pybase64
 json
 numpy
